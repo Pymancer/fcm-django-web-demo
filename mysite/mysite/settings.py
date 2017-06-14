@@ -25,7 +25,7 @@ SECRET_KEY = 'a9wdde9oig*h(=+!av^yhg5ahasn2_)u8kg@_alp=t4^3adxfi'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['0.0.0.0']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -139,3 +139,15 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.SessionAuthentication',
     ),
 }
+
+# plug in local settings if any
+f = os.path.join(PROJECT_APP_PATH, 'local_settings.py')
+if os.path.exists(f):
+    import sys
+    import imp
+    module_name = '%s.local_settings' % PROJECT_APP
+    module = imp.new_module(module_name)
+    module.__file__ = f
+    sys.modules[module_name] = module
+    exec(open(f, 'rb').read())
+
