@@ -9,7 +9,7 @@ Supports HTTPS (useful if running demo on `localhost` is not an option).
 - in `fcm-django-web-demo`:
   - create virtual environment with `python -m virtualenv env` (or `python -m venv env` in Python 3)
   - activate virtual environment with `. env/bin/activate`
-  - install necessary Python packages with `pip install -r requirements.txt`
+  - install necessary Python packages with `pip install -r mysite/requirements.txt`
 
 ### frontend
 - in `fcm-django-web-demo`:
