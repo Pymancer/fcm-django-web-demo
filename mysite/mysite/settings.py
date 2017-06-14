@@ -141,7 +141,8 @@ REST_FRAMEWORK = {
 }
 
 # plug in local settings if any
-f = os.path.join(PROJECT_APP_PATH, 'local_settings.py')
+PROJECT_APP = os.path.basename(BASE_DIR)
+f = os.path.join(PROJECT_APP, 'local_settings.py')
 if os.path.exists(f):
     import sys
     import imp
