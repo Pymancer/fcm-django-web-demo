@@ -24,6 +24,6 @@ router.register(r'devices', FCMDeviceViewSet)
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^docs/', include_docs_urls(title='FCM django web demo')),
+    url(r'^docs/', include_docs_urls(title='FCM Local Demo')),
     url(r'^', include(router.urls)),
 ]
